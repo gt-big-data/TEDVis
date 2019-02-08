@@ -41,14 +41,14 @@ HTML is a markup language for creating webpages. When we go to **localhost:8000*
 
 First things first, we need to include the tag that 'imports' the D3 package into our webpage. Go to **index.html** and in between the **head** tags, write:
 
-```
+```html
 <script src="https://d3js.org/d3.v3.min.js"></script>
 ```
 
 
 Next, paste this into the commented section:
 
-```
+```html
 <div class="chart">
 
 </div>
@@ -58,7 +58,7 @@ Since D3 follows the Document Object Model(DOM), we are able to create what I li
 
 Lastly, lets include this right after chart tags:
 
-```
+```html
 <script src="index.js"></script>
 ```
 
@@ -74,7 +74,7 @@ Javascript is what animates webpages. In our case, it will create a bar chart fo
 
 First, we decide on the size of the chart:
 
-```
+```javascript
 var width = 960,
     height = 500;
 ```
@@ -82,7 +82,7 @@ var width = 960,
 
 Now is where it gets a bit trickier:
 
-```
+```javascript
 d3.json("data.json", function(data) {
 	//More code will go here
 
@@ -91,7 +91,7 @@ d3.json("data.json", function(data) {
 
 This is how we get our data to load into the Javascript. This language use callback functions. WHAT IS THIS? :O
 
-#####Synchronous code
+##### Synchronous code
 In synchronous programs, if you have two lines of code (L1 followed by L2), then L2 cannot begin running until L1 has finished executing.
 
 You can imagine this as if you are in a line of people waiting to buy train tickets. You can't begin to buy a train ticket until all the people in front of you have finished buying theirs. Similarly, the people behind you can't start buying their tickets until you have bought yours.
@@ -105,7 +105,7 @@ Read more at https://www.pluralsight.com/guides/front-end-javascript/introductio
 Basically, all we are doing is creating a function to handle the data coming in while it arrives, but in the meantime, we can do other things taht are independent of teh data. It is quite efficent and is a reason why your browser loads pretty fast! If it doesn't sink just yet, it will soon, I promise. 
 
 Within **the more code will go here**, write:
-```
+```javascript
 	maxVal = data[0].frequency
 	d3.select(".chart")
 
@@ -115,7 +115,7 @@ Within **the more code will go here**, write:
 
 The first statement pulls the first data value. It is structured as so: 
 
-```
+```javascript
 _{word: fantastic, frequency: 4798}_
 ```
 
@@ -128,7 +128,7 @@ The second statement is the creation of the chart. Not so bad. The d3 module tha
 
 Next, we have to customize our chart. For starters, where do we include the data?
 
-```
+```javascript
 d3.select(".chart")
     .attr("width", width)
 	.attr("height", height)
@@ -157,7 +157,7 @@ Finally, the data's **.text** attribute just sets every bar graph's text to be t
 
 That was a lot. For clarity, **index.js** should look like so:
 
-```
+```javascript
 var width = 960,
     height = 500;
 
@@ -185,7 +185,7 @@ Now we can see the graph! You might need to restart the server, but refresh the 
 
 We are mostly done! Congrats!
 
-####Bonus: CSS
+#### Bonus: CSS
 
 CSS is responsible for the style of the website. Its what will make our drab webpage and stock chart fit the needs of our problem! Within data viz especially, the represemntstion matters. In the link tag at the top of the HTML file, use _ted.css_ instead of _index.css_
 

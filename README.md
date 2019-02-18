@@ -1,4 +1,4 @@
-# TEDVis
+# Intro to Data Visualization: TEDVis
 
 Hi guys! Here is our first tutorial of the semester. Breaking away from Twitter Data for a second since our server might be down, I decided to use about 5400 or so TED talks manuscripts forkerd from @saranyan's Ted-Talks repo instead!
 
@@ -36,7 +36,7 @@ python3 -m http.server
 
 This python command creates a server within this directory of this computer! Go to a browser and type in **localhost:8000** You should see our skeleton of the project! Here is our web page. Now we need to write the code for us to generate the bar graph.
 
-####HTML
+#### HTML
 HTML is a markup language for creating webpages. When we go to **localhost:8000**, we are accessing the **index.html** file within the directory you're in.
 
 First things first, we need to include the tag that 'imports' the D3 package into our webpage. Go to **index.html** and in between the **head** tags, write:
@@ -66,7 +66,7 @@ This is the tag that allows us to read in Javascript from a file. We could have 
 
 Now onto the Javascript
 
-####Javascript
+#### Javascript
 
 Here is where the meat of our code will be!
 
@@ -96,7 +96,7 @@ In synchronous programs, if you have two lines of code (L1 followed by L2), then
 
 You can imagine this as if you are in a line of people waiting to buy train tickets. You can't begin to buy a train ticket until all the people in front of you have finished buying theirs. Similarly, the people behind you can't start buying their tickets until you have bought yours.
 
-#####Asynchronous code
+##### Asynchronous code
 In asynchronous programs, you can have two lines of code (L1 followed by L2), where L1 schedules some task to be run in the future, but L2 runs before that task completes.
 
 
@@ -104,7 +104,7 @@ Read more at https://www.pluralsight.com/guides/front-end-javascript/introductio
 
 Basically, all we are doing is creating a function to handle the data coming in while it arrives, but in the meantime, we can do other things taht are independent of teh data. It is quite efficent and is a reason why your browser loads pretty fast! If it doesn't sink just yet, it will soon, I promise. 
 
-Within **the more code will go here**, write:
+Within **the more code will go here** placeholder, write:
 ```javascript
 	maxVal = data[0].frequency
 	d3.select(".chart")
